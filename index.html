@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate of Completion - Mahmoud</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* Fixed Width (like the first version) and Increased Height */
+        .certificate-container {
+            position: relative;
+            width: 900px; /* Original width */
+            height: 650px; /* Increased height for more space */
+            background: white;
+            padding: 50px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 20px solid #ffffff;
+            outline: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Google Colors Border */
+        .border-top { position: absolute; top: 0; left: 0; width: 100%; height: 10px; background: #4285F4; }
+        .border-right { position: absolute; top: 0; right: 0; width: 10px; height: 100%; background: #EA4335; }
+        .border-bottom { position: absolute; bottom: 0; left: 0; width: 100%; height: 10px; background: #FBBC05; }
+        .border-left { position: absolute; top: 0; left: 0; width: 10px; height: 100%; background: #34A853; }
+
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.04;
+            width: 450px;
+            z-index: 0;
+        }
+
+        .content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .name-highlight {
+            font-size: 3.2rem; 
+            font-weight: 900;
+            color: #1f2937;
+            margin: 20px 0;
+            background: linear-gradient(45deg, #4285F4, #EA4335, #FBBC05, #34A853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .company-logo {
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #111827;
+            font-size: 1.8rem;
+        }
+
+        .print-btn {
+            background: #1a73e8;
+            color: white;
+            padding: 14px 35px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            border: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .print-btn:hover {
+            background: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive handling for screen viewing while keeping print size */
+        @media (max-width: 940px) {
+            body { transform: scale(0.8); }
+        }
+        @media (max-width: 768px) {
+            body { transform: scale(0.6); }
+        }
+        @media (max-width: 480px) {
+            body { transform: scale(0.4); }
+        }
+
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+                transform: none !important;
+            }
+            .certificate-container { 
+                box-shadow: none; 
+                border: 20px solid white; 
+                outline: none;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .print-btn { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="certificate-container" id="certificate">
+        <div class="border-top"></div>
+        <div class="border-right"></div>
+        <div class="border-bottom"></div>
+        <div class="border-left"></div>
+
+        <svg class="watermark" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+
+        <div class="content">
+            <!-- Header -->
+            <div class="flex justify-between items-center">
+                <div class="text-left">
+                    <div class="company-logo">TECH</div>
+                    <div class="text-gray-400 font-bold uppercase tracking-widest text-xs">Software Development Division</div>
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" class="h-8">
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="flex-grow flex flex-column justify-center items-center">
+                <div class="w-full">
+                    <h2 class="font-bold text-blue-600 tracking-widest uppercase text-base mb-2">Certificate of Achievement</h2>
+                    <p class="text-gray-500 italic text-sm mb-4">This is to certify that</p>
+                    
+                    <h1 class="name-highlight">MAHMOUD</h1>
+                    
+                    <div class="w-32 h-1 bg-gray-100 mx-auto my-6"></div>
+
+                    <p class="max-w-2xl mx-auto text-gray-700 leading-relaxed text-lg">
+                        Has successfully completed the advanced professional track in <br>
+                        <span class="font-bold text-gray-900 text-xl">"Advanced Software Programming & Logic Operations"</span><br>
+                        <span class="text-gray-600 mt-2 block">
+                            Authorized by <span class="text-blue-600 font-semibold">Google Professional Training</span> in collaboration with 
+                            <span class="font-bold">TECH</span>. 
+                        </span>
+                        <span class="block mt-4 text-sm text-gray-500">
+                            The candidate has demonstrated exceptional proficiency in modern coding standards and software architecture.
+                        </span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="flex justify-between items-end px-10 mt-10">
+                <div class="text-center w-56">
+                    <div class="border-t-2 border-gray-100 pt-3">
+                        <p class="font-bold text-gray-800">TECH Director</p>
+                        <p class="text-[10px] text-gray-400 mt-1 uppercase tracking-tighter">ID: TECH-G-2026-0802</p>
+                    </div>
+                </div>
+
+                <div class="w-20">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#4285F4" fill-opacity="0.1" stroke="#4285F4" stroke-width="1"/>
+                        <path d="M30 50L45 65L70 35" stroke="#34A853" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+
+                <div class="text-center w-56">
+                    <div class="border-t-2 border-gray-100 pt-3">
+                        <p class="font-bold text-gray-800">Google Certified</p>
+                        <p class="text-[10px] text-gray-400 italic mt-1">Issued: February 8, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex justify-center">
+        <button class="print-btn" onclick="window.print()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download / Print Certificate
+        </button>
+    </div>
+
+</body>
+</html>
+
